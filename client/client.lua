@@ -1,4 +1,4 @@
-local QRCore = exports['qr-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 -- SHELLS
 RequestImap(GetHashKey("MP006_A3SUPP_MOONSHINE01"))
 RequestImap(GetHashKey("MP006_A3SUPP_MOONSHINE01_PLUG"))
@@ -25,7 +25,7 @@ function SetupUseDoorPrompt()
     Citizen.CreateThread(function()
         local str = 'Activate'
         UseDoorPrompt = PromptRegisterBegin()
-		PromptSetControlAction(UseDoorPrompt, QRCore.Shared.Keybinds['J']) -- J
+		PromptSetControlAction(UseDoorPrompt, RSGCore.Shared.Keybinds['J']) -- J
         str = CreateVarString(10, 'LITERAL_STRING', str)
         PromptSetText(UseDoorPrompt, str)
         PromptSetEnabled(UseDoorPrompt, true)
