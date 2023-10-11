@@ -25,7 +25,7 @@ function SetupUseDoorPrompt()
     Citizen.CreateThread(function()
         local str = 'Activate'
         UseDoorPrompt = PromptRegisterBegin()
-		PromptSetControlAction(UseDoorPrompt, RSGCore.Shared.Keybinds['J']) -- J
+        PromptSetControlAction(UseDoorPrompt, RSGCore.Shared.Keybinds[Config.KeybindKey])
         str = CreateVarString(10, 'LITERAL_STRING', str)
         PromptSetText(UseDoorPrompt, str)
         PromptSetEnabled(UseDoorPrompt, true)
@@ -56,14 +56,14 @@ Citizen.CreateThread(function()
             end
         end
 
-		if isInMarker and not hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = true
+        if isInMarker and not hasAlreadyEnteredMarker then
+            hasAlreadyEnteredMarker = true
             currentZone = tempZone
             ZoneLoop(currentZone)
-		end
+        end
 
-		if not isInMarker and hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = false
+        if not isInMarker and hasAlreadyEnteredMarker then
+            hasAlreadyEnteredMarker = false
             currentZone = nil
         end
     end
